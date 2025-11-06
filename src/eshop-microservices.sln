@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Domain", "Services
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Application", "Services\Ordering\Ordering.Application\Ordering.Application.csproj", "{879A2474-CF10-4076-A37F-0E576CEC2903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Infrastructure", "..\Ordering.Infrastructure\Ordering.Infrastructure.csproj", "{64C99DB2-0913-4EFB-B723-FAC4756272D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Infrastructure", "Services\Ordering\Ordering.Infrastructure\Ordering.Infrastructure.csproj", "{5F7B21BE-6E34-4E1A-97F1-2842B21599D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +71,10 @@ Global
 		{879A2474-CF10-4076-A37F-0E576CEC2903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{879A2474-CF10-4076-A37F-0E576CEC2903}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{879A2474-CF10-4076-A37F-0E576CEC2903}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64C99DB2-0913-4EFB-B723-FAC4756272D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64C99DB2-0913-4EFB-B723-FAC4756272D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64C99DB2-0913-4EFB-B723-FAC4756272D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64C99DB2-0913-4EFB-B723-FAC4756272D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7B21BE-6E34-4E1A-97F1-2842B21599D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7B21BE-6E34-4E1A-97F1-2842B21599D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7B21BE-6E34-4E1A-97F1-2842B21599D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7B21BE-6E34-4E1A-97F1-2842B21599D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,7 +91,7 @@ Global
 		{27F7C0CA-6160-4CA8-B46D-5609B43B472A} = {4B4631B4-A6C9-4967-891B-0270CC90131E}
 		{56731526-C779-4522-8E1F-2AE628D14A3B} = {4B4631B4-A6C9-4967-891B-0270CC90131E}
 		{879A2474-CF10-4076-A37F-0E576CEC2903} = {4B4631B4-A6C9-4967-891B-0270CC90131E}
-		{64C99DB2-0913-4EFB-B723-FAC4756272D0} = {4B4631B4-A6C9-4967-891B-0270CC90131E}
+		{5F7B21BE-6E34-4E1A-97F1-2842B21599D6} = {4B4631B4-A6C9-4967-891B-0270CC90131E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4106675-B972-4476-9600-A2584CDCE0C3}
