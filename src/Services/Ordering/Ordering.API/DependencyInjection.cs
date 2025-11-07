@@ -3,7 +3,7 @@
     public static class DependencyInjection
     {
         //Before build application
-        public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddApiServices(this IServiceCollection services)
         {
             
 
