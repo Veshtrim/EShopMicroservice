@@ -10,7 +10,7 @@
             return services;
         }
         //After build application
-        public static WebApplication ConfigureApiPipeline(this WebApplication app)
+        public static WebApplication UseApiServices(this WebApplication app)
         {
             
             return app;
