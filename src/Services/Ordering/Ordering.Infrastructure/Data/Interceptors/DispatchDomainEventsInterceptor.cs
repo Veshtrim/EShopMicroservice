@@ -13,7 +13,7 @@ namespace Ordering.Infrastructure.Data.Interceptors
         }
         public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result, CancellationToken cancellationToken = default)
         {
-            DispatchDomainEvents(eventData.Context);
+            await DispatchDomainEvents(eventData.Context);
             return await base.SavingChangesAsync(eventData, result, cancellationToken);
         }
         public async Task DispatchDomainEvents(DbContext? context)
