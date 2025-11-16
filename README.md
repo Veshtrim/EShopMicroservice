@@ -11,7 +11,7 @@
 
 <pre>
 +---------------------------------------------------------+
-|                   API Gateway (planned)                 |
+|                   API Gateway                           |
 +--------------------+-------------------+----------------+
 | Catalog Service    | Basket Service    | Discount gRPC  |
 | (REST API)         | (Redis Cache)     | (Microservice) |
