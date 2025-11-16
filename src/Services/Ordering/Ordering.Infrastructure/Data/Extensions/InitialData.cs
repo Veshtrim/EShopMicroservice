@@ -5,7 +5,7 @@
         public static IEnumerable<Customer> Customers =>
         new List<Customer>
         {
-        Customer.Create(CustomerId.Of(new Guid("58c49479-ec65-4de2-86e7-033c546291aa")), "mehmet", "veshtrim@gmail.com"),
+        Customer.Create(CustomerId.Of(new Guid("58c49479-ec65-4de2-86e7-033c546291aa")), "veshtrim", "veshtrim@gmail.com"),
         Customer.Create(CustomerId.Of(new Guid("189dc8dc-990f-48e0-a37b-e6f2b60b9d7d")), "john", "john@gmail.com")
         };
 
@@ -22,7 +22,7 @@
         {
             get
             {
-                var address1 = Address.Of("veshtrim", "mulaku", "mehmet@gmail.com", "Bahcelievler No:4", "Turkey", "Istanbul", "38050");
+                var address1 = Address.Of("veshtrim", "mulaku", "veshtrim@gmail.com", "George Bush", "Kosovo", "Turkey", "10000");
                 var address2 = Address.Of("john", "doe", "john@gmail.com", "Broadway No:1", "England", "Nottingham", "08050");
 
                 var payment1 = Payment.Of("veshtrim", "5555555555554444", "12/28", "355", 1);
