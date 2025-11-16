@@ -1,5 +1,9 @@
 <h1>EShopMicroservice</h1>
-
+<p>
+  <img src="https://img.shields.io/github/actions/workflow/status/Veshtrim/EShopMicroservice/dotnet.yml?label=Build&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Docker-Ready-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
+</p>
 <p><strong>.NET 8</strong> · <strong>Clean Architecture</strong> · <strong>Microservices</strong></p>
 
 <p>A modern microservices-based e-commerce backend built with .NET 8, Clean Architecture and Docker.</p>
