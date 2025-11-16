@@ -16,8 +16,8 @@
 | Catalog Service    | Basket Service    | Discount gRPC  |
 | (REST API)         | (Redis Cache)     | (Microservice) |
 +--------------------+-------------------+----------------+
-| Ordering Service   | Identity Service  | Event Bus      |
-| (CQRS, MediatR)    | (JWT Auth)        | (RabbitMQ)     |
+| Ordering Service   |  Event Bus      |
+| (CQRS, MediatR)    |  (RabbitMQ)     |
 +---------------------------------------------------------+
 | Infrastructure: EF Core · PostgreSQL · Docker · .NET 8 |
 +---------------------------------------------------------+
@@ -86,7 +86,6 @@ http://localhost:5000/swagger
 
 <h2>Future Roadmap</h2>
 <ul>
-  <li>RabbitMQ event-driven integration</li>
   <li>Kubernetes manifests</li>
   <li>Serilog + Seq centralized logging</li>
   <li>Prometheus + Grafana monitoring</li>
@@ -114,8 +113,6 @@ http://localhost:5000/swagger
   <li>Open a pull request</li>
 </ol>
 
-<h2>License</h2>
-<p>Licensed under the MIT License.</p>
 
 <h2>Author</h2>
 <p>Veshtrim Mulaku — .NET Developer & Microservice Architect</p>
