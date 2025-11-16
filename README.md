@@ -1,121 +1,78 @@
-<h1 align="center">🛍️ EShopMicroservice</h1>
+<h1>EShopMicroservice</h1>
 
-<p align="center">
-  <strong>Modern microservices-based e-commerce backend built with .NET 8, Clean Architecture, and Docker.</strong><br />
-  Event-driven, modular, and scalable — powered by <b>RabbitMQ</b> (coming soon) and <b>Kubernetes</b> (planned).
-</p>
+<p><strong>.NET 8</strong> · <strong>Clean Architecture</strong> · <strong>Microservices</strong></p>
 
-<p align="center">
-  <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET-8.0-blueviolet?logo=dotnet&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Architecture-Microservices-green" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Messaging-RabbitMQ-orange?logo=rabbitmq" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Orchestration-Kubernetes-lightblue?logo=kubernetes" /></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey" /></a>
-</p>
+<p>A modern microservices-based e-commerce backend built with .NET 8, Clean Architecture and Docker.</p>
 
-## 🧭 Overview
+<h2>Overview</h2>
+<p>This project implements a distributed e-commerce backend composed of independent services for core domains such as Ordering, Catalog, Basket, Discount, and Identity. Each service follows Clean Architecture, DDD, and CQRS principles.</p>
 
-`EShopMicroservice` is a distributed e-commerce backend built for scalability, modularity, and cloud readiness.
-Each core domain — **Ordering**, **Catalog**, **Basket**, **Discount**, and **Identity** — is developed as an independent microservice following **Clean Architecture**, **CQRS**, and **DDD** principles.
+<h2>Architecture</h2>
 
-> 📨 **RabbitMQ** will power inter-service communication (event-driven messaging), and **Kubernetes** integration is planned for orchestration and production scalability.
-
----
-
-## 🎗️ Architecture
-
-```
+<pre>
 +---------------------------------------------------------+
-|                   API Gateway (planned)                 |
+|                   API Gateway                           |
 +--------------------+-------------------+----------------+
 | Catalog Service    | Basket Service    | Discount gRPC  |
 | (REST API)         | (Redis Cache)     | (Microservice) |
 +--------------------+-------------------+----------------+
-| Ordering Service   | Identity Service  | Event Bus (RabbitMQ) |
-| (CQRS, MediatR)    | (JWT Auth)        | → Async Messaging     |
+| Ordering Service   |  Event Bus      |
+| (CQRS, MediatR)    |  (RabbitMQ)     |
 +---------------------------------------------------------+
-| Infrastructure: EF Core · PostgreSQL · Docker · .NET 8  |
+| Infrastructure: EF Core · PostgreSQL · Docker · .NET 8 |
 +---------------------------------------------------------+
-```
+</pre>
 
-Each service is containerized, independently deployable, and follows a consistent layered structure.
+<h2>Service Structure</h2>
+<ul>
+  <li>src/Services/Ordering/</li>
+  <li>src/Services/Catalog/</li>
+  <li>src/Services/Basket/</li>
+  <li>src/Services/Discount.Grpc/</li>
+</ul>
 
----
+<h2>Tech Stack</h2>
+<ul>
+  <li><strong>Backend:</strong> .NET 8 · ASP.NET Core Web API</li>
+  <li><strong>Architecture:</strong> DDD · CQRS · MediatR · Clean Architecture</li>
+  <li><strong>Messaging:</strong> RabbitMQ (planned)</li>
+  <li><strong>Database:</strong> PostgreSQL / SQL Server · EF Core</li>
+  <li><strong>Containerization:</strong> Docker · Docker Compose</li>
+  <li><strong>Deployment:</strong> Kubernetes (future)</li>
+  <li><strong>Dev Tools:</strong> Mapster · Serilog · Swagger</li>
+</ul>
 
-## 🧬 Service Structure
+<h2>Getting Started</h2>
 
-```
-src/
-└── Services/
-    ├── Ordering/
-    │   ├── Ordering.API
-    │   ├── Ordering.Application
-    │   ├── Ordering.Domain
-    │   └── Ordering.Infrastructure
-    ├── Catalog/
-    ├── Basket/
-    └── Discount.Grpc/
-```
+<h3>Prerequisites</h3>
+<ul>
+  <li>.NET SDK 8.0+</li>
+  <li>Docker Desktop</li>
+</ul>
 
----
+<h3>Setup and Run</h3>
 
-## ⚙️ Tech Stack
-
-| Category              | Technologies                                    |
-| --------------------- | ----------------------------------------------- |
-| **Backend**           | .NET 8 · ASP.NET Core Web API                   |
-| **Architecture**      | DDD · CQRS · MediatR · Clean Architecture       |
-| **Messaging**         | RabbitMQ *(coming soon)*                        |
-| **Database**          | PostgreSQL / SQL Server · EF Core               |
-| **Containerization**  | Docker · Docker Compose                         |
-| **Planned Additions** | Kubernetes · API Gateway · Prometheus + Grafana |
-| **Dev Tools**         | Mapster · Serilog · Swagger / OpenAPI           |
-
----
-
-## 🚀 Getting Started
-
-### 🦬 Prerequisites
-
-* [.NET SDK 8.0+](https://dotnet.microsoft.com/)
-* [Docker Desktop](https://www.docker.com/)
-* *(Optional)* RabbitMQ – will be available via Docker Compose
-
-### 🛠️ Setup & Run
-
-```bash
-# Clone the repository
+<pre><code># Clone
 git clone https://github.com/Veshtrim/EShopMicroservice.git
 cd EShopMicroservice
 
-# Build the solution
+# Build
 dotnet build
 
-# Run a specific service
+# Run a service
 cd src/Services/Ordering/Ordering.API
 dotnet run
-```
 
-Access Swagger UI:
-🔗 [http://localhost:5000/swagger](http://localhost:5000/swagger)
+# Swagger:
+http://localhost:5000/swagger
+</code></pre>
 
----
+<h3>Run with Docker</h3>
+<pre><code>docker-compose up --build
+</code></pre>
 
-## 🐳 Running with Docker
-
-```bash
-docker-compose up --build
-```
-
-> 🟠 Docker Compose will soon include RabbitMQ, PostgreSQL, and all core services.
-> 🦬 Kubernetes manifests will be added later for container orchestration and deployment in production.
-
----
-
-## ⚙️ Configuration Example
-
-```json
-{
+<h2>Configuration Example</h2>
+<pre><code>{
   "ConnectionStrings": {
     "OrderingDb": "Host=localhost;Database=OrderingDb;Username=postgres;Password=postgres"
   },
@@ -125,67 +82,37 @@ docker-compose up --build
     "Password": "guest"
   }
 }
-```
+</code></pre>
 
----
+<h2>Future Roadmap</h2>
+<ul>
+  <li>Kubernetes manifests</li>
+  <li>Serilog + Seq centralized logging</li>
+  <li>Prometheus + Grafana monitoring</li>
+  <li>Identity service with JWT</li>
+  <li>API Gateway (Ocelot or YARP)</li>
+</ul>
 
-## 🧠 Future Roadmap
+<h2>Testing</h2>
+<pre><code>dotnet test
+</code></pre>
 
-* [ ] Implement **RabbitMQ** event-driven communication
-* [ ] Add **Kubernetes (K8s)** support
-* [ ] Centralized logging (**Serilog + Seq**)
-* [ ] Monitoring with **Prometheus + Grafana**
-* [ ] Identity service with **JWT authentication**
-* [ ] API Gateway integration (**Ocelot / YARP**)
+<h2>Development Principles</h2>
+<ul>
+  <li>Clean Architecture: Application · Domain · Infrastructure · API</li>
+  <li>CQRS for command/query separation</li>
+  <li>Database per service</li>
+  <li>Modular and independently deployable</li>
+</ul>
 
----
-
-## 🧪 Testing
-
-* Unit and integration testing via **xUnit** and **Testcontainers**
-
-```bash
-dotnet test
-```
-
----
-
-## 🧪 Development Principles
-
-* Clean Architecture: Application · Domain · Infrastructure · API
-* CQRS for command/query separation
-* Database per service for isolation
-* Modular, testable, and independently deployable design
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-2. Create a feature branch: `feature/your-feature`
-3. Run tests and ensure CI passes
-4. Submit a pull request with a clear description
-
----
-
-## 📄 License
-
-Licensed under the **MIT License** — see the [LICENSE](./LICENSE) file.
-
----
-
-## 👤 Author
-
-**Veshtrim Mulaku**
-🔗 [GitHub](https://github.com/Veshtrim)  • 💡 .NET Developer | System Architect | Microservice Enthusiast
-
-> Building scalable systems with clean design, asynchronous communication, and cloud-native architecture.
+<h2>Contributing</h2>
+<ol>
+  <li>Fork the project</li>
+  <li>Create a feature branch</li>
+  <li>Commit changes</li>
+  <li>Open a pull request</li>
+</ol>
 
 
-
-
-
-
-
+<h2>Author</h2>
+<p>Veshtrim Mulaku — .NET Developer & Microservice Architect</p>
